@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      database: ${MONGO_DATABASENAME}
+      uri: ${MONGO_URI}
+      host: ${MONGO_HOST}
+server:
+  port: 8090
+
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="hobby" class="com.stackroute.Hobby">
+        <property name="id" value="101"></property>
+        <property name="hobbyName" value="Jenny"></property>
+    </bean>
+
+    <bean id="hobby1" class="com.stackroute.Hobby">
+        <property name="id" value="102"></property>
+        <property name="hobbyName" value="Johny"></property>
+    </bean>
+
+    <bean id="student" class="com.stackroute.Student">
+        <property name="id" value="1001"></property>
+        <property name="name" value="student1"></property>
+        <property name="email" value="student1@gmail.com"></property>
+        <!--<property name="hobby" ref="hobby1"></property>-->
+
+        <property name="hobbyList">
+
+            <list>
+                <ref bean="hobby"></ref>
+                <ref bean="hobby1"></ref>
+            </list>
+        </property>
+    </bean>
+
+
+</beans>

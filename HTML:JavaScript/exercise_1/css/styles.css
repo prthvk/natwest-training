@@ -1,0 +1,126 @@
+/* Complete the CSS */
+html,body{
+    margin:0;
+    background: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main section.container{
+    margin:2vh 2vh 2vh 2vh;
+    background-color: white;
+    box-shadow : 5px 5px 25px grey;
+}
+
+.header-row { 
+    background-color: rgb(58, 57, 57);
+
+    padding-top: 0em;
+    padding-bottom: 0em;
+
+    border-bottom: 0em;
+    border-top: 0em;
+    border-left: 0vh;
+    border-right: 0vh;
+
+    margin-left: 0vh;
+    margin-right: 0vh;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+ul {
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    color: grey;
+    flex-flow: row wrap;
+    justify-content:flex-start;
+    border-top: 0em;
+    border-bottom: 0em;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+li:hover{
+    background-color: blue;
+    color: white;
+}
+
+p{
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom:3em;
+}
+
+li{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
+
+    border-bottom: 1em;
+    border-top: 1em;
+    border-left: 1em;
+    border-right: 1em;
+
+   margin-bottom: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+
+
+.articles{
+    background: rgb(221, 216, 216);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-top:10vh;
+}
+
+div{
+    border-style: solid;
+    border-radius: 50%;
+    border-color: rgb(102, 170, 212);
+    padding: 4em;
+    margin : 10vh 10vh 10vh 10vh;
+}
+
+img{
+    height: 10vh;
+    width: 10vh;
+}
+
+h3{
+    background-color: rgb(79, 164, 216);
+    color: rgb(175, 173, 173);
+    text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 5px;
+    border-left: 5em;
+    border-right: 5em;
+    margin-right:3em;
+    margin-left:3em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+h2{
+    text-align: center;
+    color: rgb(118, 183, 223);
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.article{
+    align-items: center;
+    border-left: 0em;
+    border-right:0em;
+    margin-left:2em;
+    margin-right:2em;
+    padding-left: 1vh;
+    padding-right:1vh;
+}

@@ -1,0 +1,267 @@
+Spring framework (5.2)
+	1)Spring Core
+
+		a)IOC
+		b)DI
+		c)Xml configurations
+		d)Java Configurations and Annotation
+
+	2)SpringMVC
+		a) J2EE (servlet and jsp) traditional MVC
+		b)SpringMVC
+			a)Controller, services , repositories
+		c)Hibernate ORM
+	3)RESTApi
+
+		a)Webservices
+		a)RestController
+		b)Postman
+
+	4)Spring AOP(Aspect oriented programming)
+	6)Spring Boot
+		a) Controller, services, Repositories
+		b)Spring Data Jpa (ORM - Hibernate)
+			a)Mysql
+			b)Mongodb
+		c)Mockito test 
+	7)Microservices
+	8)Microservices Patterns
+		a)Zuul 
+		b)eureka
+		c)Config
+
+	9)CI and CD - Dokcerhub
+
+Entire keepNote will be done
+	
+-------------------------------------------------------------------------------------
+
+
+
+	Spring Framework
+
+Enterprise applications(Highly complex systems)
+
+What are J2EE applications?
+	They are basically large multi user applications that can manipulate massive data,network 
+	distributed resources, and complex logic.
+
+Components J2EE
+
+-Application clients and applets are client components
+-Java Servlet and java server Pages(JSP) technology components are web components
+-Enterprise Java Beans (EJB) components are bussiness components.
+
+Client tiers , middle tier, data tier(often called the enterprise information systems tier)
+
+	Client tier-
+	
+	- Application clients
+	- request to the server
+	- Clients can be a web browser, a standalone application, other services
+
+	Web tier-
+	 - Servlets , Jsp, Jstl
+
+
+ Client - Server - (Application server ,Web Server (tomcat) - Glassfish
+		(Web + Bussiness (EJB))
+
+
+
+Drawbacks
+	- Complexities - Writing code was very complex, it was tighly coupled.
+	- Lots of XML files needs to be written, for even basic ejb lots of XML files
+		(deployment descriptor)
+	-It took ages to deploy or redeploy the application.
+	-Hard coded dependency version compatibility
+	-Lots of configuration
+---------------------------------------------------------------------------------------
+
+
+What is Framework?
+
+1)Framework are large bodies(usually many classes) of predefined code to which we can add our own code to solve a problem in a specific domain.
+
+
+Benefits-
+1)Framework are based on architectures and designs and they force you to follow a specific architecture.
+
+2)They force you to follow an already optimized and less issues prone design for your applications.
+
+3)so the classes or the apis which will be provided by framework is going to be efficient , secure
+less expense, 
+
+
+--------------------------------------------------------------------------------------
+
+
+Why Spring Framework?
+
+1) Spring is framework of framework.
+
+2)The crux of the framework is a concept called DI or Inversion of Control(IOC).
+
+3)Enables the developers to develop the enterprise applications using POJOs(Plain old Java Object).
+  enterprise container(application congtainer) we are uisng web server(tomcat).
+
+4)Spring Framework is both complete and modular, because spring has a layered archotecture.
+
+5)Well designed web MVC framework 
+6)Spring is light weight
+
+7)End to End development - 
+
+
+-------------------------------------------------
+
+Spring Modules
+
+1) Spring core - (Base module)
+2) Spring JDBC - (Persistence logic)
+3)Spring AOP - (for cross context logic)
+4)Spring Transaction ( For Transaction support)
+5)Spring ORM - (Object Relational mapping)
+6) Spring Web MVC( web Mvc)
+
+
+----------------------------------------------------
+
+Core container
+
+
+1)Beans, core, context, SpEl
+
+
+The core and beans modules provide the most fundamental parts of the framework and provides
+ The IOC and DI features.
+
+Context - module is build on the solid base provided by the core and beans modules.
+It provides a  way to access objects in framework- style manner. It is a medium to access 
+any object defined and configured
+
+SpEl- Expression Language - this modules provides a poweful expression language for querying and manupulating objects at run time.
+
+---------------------------------------------------------------------------------
+
+Spring IOC - Inversion of Control - DI(Dependency Injection) is implemented in the Spring by Inversion of Control(container)
+
+ 1)Creating Objects - Control over the objects construction is given to the Spring container.
+ 
+The Spring IOC container by using java pojo classes and configuration metadata producces afully configured and executable System or application.
+
+
+Two types -
+BeanFactory, ApplicationContext.
+
+Spring 
+---------------------------------
+
+1) Add depencencies in pom.xml
+2)Create the class  - src/main/java(source file), Hobby and Student(Hobby)
+	List of Hobbies injected into Student Object
+3)src/main/resource - beans.xml 
+4)Main - we craeted object of ApplicationContext (Spring IOC container)
+
+DI
+	1)Constructor Injection
+	2)Property Injection
+
+
+Bean - Init and destroy
+
+When a bean is instantiated, it may require to perform some initialization to get into a usable
+state. 
+
+Init ----- destroy
+
+no more XML
+
+java Based Annotation and Configurations
+
+@Bean and @Autowire @Component @ComponentScan-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+

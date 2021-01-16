@@ -1,0 +1,27 @@
+<div layout-align="center center">
+    <mat-card class="logincard">
+        <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="user" class="login-form" (ngSubmit)="loginSubmit()">
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input matInput type="text" placeholder="username" formControlName="username" class="username"
+                        [class.error-border]='username1.touched && username1.invalid'>
+                </mat-form-field>
+                <small style="color:red;" [class.error-message]='username1.valid || username1.untouched'>Enter a Valid
+                    Username</small>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="password" formControlName="password" class="password"
+                        [class.error-border]='password1.touched && password1.invalid'>
+                </mat-form-field>
+                <small style="color:red;" [class.error-message]='password1.untouched || password1.valid'>Enter the
+                    password</small>
+                <a><button mat-button color="primary" type="submit" class="button"
+                    [disabled]='user.invalid'>Submit</button></a>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

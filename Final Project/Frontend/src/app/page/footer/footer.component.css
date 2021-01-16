@@ -1,0 +1,57 @@
+.button-attributes{
+    background-color: #3380e4;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.text-box{
+    padding: 10px 32px;
+}
+
+.footer-section-container{
+    margin-top: 3vh;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    font-family: 'Rubik', sans-serif;
+    color:white;
+    background-color: #242121;
+}
+
+.footer-section-content{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+.logo-links-section{
+    width: 20vh;
+    padding-left: 5em;
+}
+
+.recent-news-section{
+    width: 50vh;
+    padding-left: 3em;
+    padding-right: 1em;
+}
+
+.signup-section{
+    width: 50vh;
+    margin-left: 10vh;
+}
+
+.social-media-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+img{
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+}

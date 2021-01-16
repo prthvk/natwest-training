@@ -1,0 +1,55 @@
+<section class="filter">
+    <section>
+        <mat-form-field appearance="fill" required>
+            <mat-label>From Date</mat-label>
+            <input matInput [min]="minDateFrom" [max]="maxDateFrom" [matDatepicker]="picker1" [formControl]="selectedFromDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+    </section>
+    <section>
+        <mat-form-field appearance="fill" required>
+            <mat-label>To date</mat-label>
+            <input matInput [min]="minDateTo" [max]="maxDateTo" [matDatepicker]="picker2" [formControl]="selectedToDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+    </section>
+    <section class="ui-type">
+        <button mat-button [matMenuTriggerFor]="menu" class="menu">{{this.selectedUiType}}</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)='selectUiType("Tabular")'>Tabular</button>
+            <button mat-menu-item (click)='selectUiType("Pie Chart")'>Pie Chart</button>
+            <button mat-menu-item (click)='selectUiType("Bar Graph")'>Bar Graph</button>
+            <button mat-menu-item (click)='selectUiType("Polar Area Chart")'>Polar Area Chart</button>
+            <!-- <button mat-menu-item (click)='selectUiType("Radar Chart")'>Radar Chart</button> -->
+        </mat-menu>
+    </section>
+</section>
+
+<button style="display: block;" mat-raised-button color="primary" class="button" (click)='renderData()'>Go</button>
+
+<p class="resultMessage">{{this.resultMessage}}</p>
+<section class="tabularItems" *ngIf='this.loadDataFormat === "Tabular"'>
+    <mat-card class="card" *ngFor="let res of topdata">
+        <mat-card-header>
+            <mat-card-title>Transaction number</mat-card-title>
+            <mat-card-subtitle>xxxxxxxxxxxx</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Amount: xxxxx</p>
+            <p>Time: xxxx</p>
+            <p>Date: xxxx</p>
+            <p>Type: xxxx</p>
+            <p>Merchant: xxxx</p>
+        </mat-card-content>
+    </mat-card>
+</section>
+<section class="chart">
+    <!-- [ng-style]="{'display' : this.loadDataFormat==='Pie Chart' ? block : none}" -->
+    <!-- logic for pie chart data -->
+    <!-- goes here -->
+    <canvas id="myChart">
+
+    </canvas>
+</section>

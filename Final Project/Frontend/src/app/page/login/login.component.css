@@ -1,0 +1,66 @@
+.login-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 5%;
+    align-items: center;
+}
+
+.button{
+    font-weight: 350;
+}
+
+input{
+   height:2em;
+}
+
+.register-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 5%;
+    align-items: center;
+}
+
+.mat-radio-button{
+    padding:5%;
+}
+
+.logincard{
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 2em;
+    width: 60vh;
+    margin:10vh auto;
+    background-color:rgb(229, 223, 235);
+}
+
+.registercard{
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 2em;
+    width: 60vh;
+    margin:10vh auto;
+    background-color:rgb(229, 223, 235);
+}
+
+div{
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.error-border{
+    border-color: red;
+}
+
+.error-message{
+    color: red;
+    display: none;  
+}
+

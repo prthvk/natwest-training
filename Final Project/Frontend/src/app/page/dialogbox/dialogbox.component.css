@@ -1,0 +1,21 @@
+.mat-dialog-content{
+    text-align:center;
+}
+
+p{
+    font-size: larger;
+    font-weight: 500;
+}
+
+button{
+    margin: 0 auto;
+}
+
+.error-border{
+    border-color: red;
+}
+
+.error-message{
+    color: red;
+    display: none;  
+}

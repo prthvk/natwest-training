@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="hobby1" class="com.stackroute.springdi.bean.Hobby">
+
+    </bean>
+
+    <bean id="hobby2" class="com.stackroute.springdi.bean.Hobby" init-method="init">
+ <constructor-arg>
+     <value>101</value>
+ </constructor-arg>
+        <constructor-arg>
+            <value>Painting</value>
+        </constructor-arg>
+
+    </bean>
+
+
+    <bean id="hobby3" class="com.stackroute.springdi.bean.Hobby">
+
+        <constructor-arg index="0" value="2001"></constructor-arg>
+        <constructor-arg index="1" value="Dancing"></constructor-arg>
+    </bean>
+   <!-- <bean id="student1" class="com.stackroute.Student">
+
+        <constructor-arg index="0"  type="int" value="2001"></constructor-arg>
+        <constructor-arg index="1" type="java.lang.String" value="John"></constructor-arg>
+        <constructor-arg index="2"  type="java.lang.String" value="student1@gmail.com"></constructor-arg>
+        &lt;!&ndash;<constructor-arg index="3"  type="com.stackroute.Hobby" ref="hobby3"></constructor-arg>&ndash;&gt;
+
+        <constructor-arg>
+            <list>
+                <ref bean="hobby2"></ref>
+                <ref bean="hobby3"></ref>
+            </list>
+        </constructor-arg>
+    </bean>-->
+
+
+</beans>

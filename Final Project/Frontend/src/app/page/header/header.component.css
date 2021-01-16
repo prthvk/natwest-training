@@ -1,0 +1,88 @@
+img{
+    width: 5vw;
+    height: 5vh;
+}
+mat-toolbar{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 2em;
+    padding-bottom:2em;
+    margin-bottom: 3em;
+    background-color: rgb(240, 235, 240);
+    width: 100vw;
+}
+
+.debitLimit button{
+    text-decoration: none;
+    color: saddlebrown;
+    padding: 0px 10px;
+    background-color: none;
+}
+.debitLimit button:hover {
+    background-color: rgba(139, 69, 19, 0.986);
+    color: white;
+    transition-duration: 0.3s;
+}
+
+.blockCard button{
+    text-decoration: none;
+    color: red;
+    padding: 0px 10px;
+}
+.blockCard button:hover {
+    background-color: rgba(220, 0, 0, 0.986);
+    color: white;
+    transition-duration: 0.3s;
+}
+.unblockCard button{
+    text-decoration: none;
+    color: green;
+    padding: 0px 10px;
+}
+.unblockCard button:hover {
+    background-color: rgba(36, 121, 46, 0.979);
+    color: white;
+    transition-duration: 0.3s;
+}
+.logoutButton button {
+    text-decoration: none;
+    padding: 0px 10px;
+}
+.logoutButton button:hover {
+    background-color: rgba(63, 81, 181, 0.979);
+    color: white;
+    transition-duration: 0.3s;
+}
+
+a{
+    text-decoration: none;
+    padding: 0px 5px;
+}
+
+.heading{
+    padding-left: 0.5em;
+    font-weight: 300;
+    font-size: xx-large;
+    color: rgb(4, 126, 126);
+    margin-right: 45vw;
+}
+
+.dis{
+    display: none;
+    padding-left: 60em;
+    color: teal;
+}
+
+img{
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+}
+
+button{
+    /* margin-left: 70em; */
+    color: teal;
+}

@@ -1,0 +1,18 @@
+<div mat-dialog-content>
+  <p>Set Debit Amount Limit</p>
+  <br>
+  <form [formGroup]="dbl">
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput formControlName="debitLimit" [class.error-border]='DebitLimit.invalid'>
+    </mat-form-field>
+    <div>
+      <small style="color:red;" [class.error-message]='DebitLimit.valid'>Enter a Valid Amount</small>
+    </div>
+  </form>
+</div>
+<br>
+<div mat-dialog-actions style="text-align: center;">
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button (click)="save()">Set</button>
+</div>

@@ -1,0 +1,16 @@
+
+h
+java:S1128"FRemove this unused import 'org.springframework.stereotype.Controller'.(øŠ—Öùÿÿÿÿ8õÖùúÂ.
+H
+java:S1452)"&Remove usage of generic wildcard type.(Ùè¡ˆùÿÿÿÿ8áŠí‚Ã.
+C
+java:S1452."&Remove usage of generic wildcard type.(«©ò¦8Ò£‹ƒÃ.
+W	java:S1254"<This block of commented-out lines of code should be removed.(Ÿ®ş 8‚úúúÂ.
+H
+java:S1452#"&Remove usage of generic wildcard type.(ÍæÖÆøÿÿÿÿ8„õ¼ÿÂ.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8âœ¹ÿÂ.
+B
+java:S1452"&Remove usage of generic wildcard type.(‰Õî*8şå¸ÿÂ.
+b
+java:S4684)"@Replace this persistent entity with a simple POJO or DTO object.(Ùè¡ˆùÿÿÿÿ8ïøî‚Ã.

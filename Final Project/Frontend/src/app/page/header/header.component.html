@@ -1,0 +1,18 @@
+<section>
+    <mat-toolbar>
+        <img src="assets/card.jpg" alt="Company Logo">
+        <a routerLink='/dashboard'><span class="heading">YourCard</span></a>
+        <section>
+            <a class="blockCard" *ngIf="!this.blockedStatus && display"><button mat-button value="block"
+                    (click)="blockCard()">Block Card</button></a>
+            <a class="unblockCard" *ngIf="this.blockedStatus && display"><button mat-button value="unblock"
+                    (click)="unblockCard()">Unblock Card</button></a>
+            <a class="debitLimit"><button *ngIf="display" mat-button value="debitLimit && display"
+                    (click)="openDialog()">Update Debit Limit</button></a>
+            <a class="logoutButton"><button *ngIf="display" mat-button color="primary" value="logout"
+                    (click)="logout()">Logout</button></a>
+        </section>
+    </mat-toolbar>
+</section>
+
+<!-- The condition in ngIf with "condition1 && diaplay" don't remove the '&& display" since it helps in displaying Logout, update debit limit and block options only when the user in logged in and not when the user is logged out-->

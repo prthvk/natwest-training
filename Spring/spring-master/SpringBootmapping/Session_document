@@ -1,0 +1,790 @@
+Spring framework (5.2)
+	1)Spring Core
+
+		a)IOC
+		b)DI
+		c)Xml configurations
+		d)Java Configurations and Annotation
+
+	2)SpringMVC
+		a) J2EE (servlet and jsp) traditional MVC
+		b)SpringMVC
+			a)Controller, services , repositories
+		c)Hibernate ORM
+	3)RESTApi
+
+		a)Webservices
+		a)RestController
+		b)Postman
+
+	4)Spring AOP(Aspect oriented programming)
+	6)Spring Boot
+		a) Controller, services, Repositories
+		b)Spring Data Jpa (ORM - Hibernate)
+			a)Mysql
+			b)Mongodb
+		c)Mockito test 
+	7)Microservices
+	8)Microservices Patterns
+		a)Zuul 
+		b)eureka
+		c)Config
+
+	9)CI and CD - Dokcerhub
+
+Entire keepNote will be done
+	
+-------------------------------------------------------------------------------------
+
+
+
+	Spring Framework
+
+Enterprise applications(Highly complex systems)
+
+What are J2EE applications?
+	They are basically large multi user applications that can manipulate massive data,network 
+	distributed resources, and complex logic.
+
+Components J2EE
+
+-Application clients and applets are client components
+-Java Servlet and java server Pages(JSP) technology components are web components
+-Enterprise Java Beans (EJB) components are bussiness components.
+
+Client tiers , middle tier, data tier(often called the enterprise information systems tier)
+
+	Client tier-
+	
+	- Application clients
+	- request to the server
+	- Clients can be a web browser, a standalone application, other services
+
+	Web tier-
+	 - Servlets , Jsp, Jstl
+
+
+ Client - Server - (Application server ,Web Server (tomcat) - Glassfish
+		(Web + Bussiness (EJB))
+
+
+
+Drawbacks
+	- Complexities - Writing code was very complex, it was tighly coupled.
+	- Lots of XML files needs to be written, for even basic ejb lots of XML files
+		(deployment descriptor)
+	-It took ages to deploy or redeploy the application.
+	-Hard coded dependency version compatibility
+	-Lots of configuration
+---------------------------------------------------------------------------------------
+
+
+What is Framework?
+
+1)Framework are large bodies(usually many classes) of predefined code to which we can add our own code to solve a problem in a specific domain.
+
+
+Benefits-
+1)Framework are based on architectures and designs and they force you to follow a specific architecture.
+
+2)They force you to follow an already optimized and less issues prone design for your applications.
+
+3)so the classes or the apis which will be provided by framework is going to be efficient , secure
+less expense, 
+
+
+--------------------------------------------------------------------------------------
+
+
+Why Spring Framework?
+
+1) Spring is framework of framework.
+
+2)The crux of the framework is a concept called DI or Inversion of Control(IOC).
+
+3)Enables the developers to develop the enterprise applications using POJOs(Plain old Java Object).
+  enterprise container(application congtainer) we are uisng web server(tomcat).
+
+4)Spring Framework is both complete and modular, because spring has a layered archotecture.
+
+5)Well designed web MVC framework 
+6)Spring is light weight
+
+7)End to End development - 
+
+
+-------------------------------------------------
+
+Spring Modules
+
+1) Spring core - (Base module)
+2) Spring JDBC - (Persistence logic)
+3)Spring AOP - (for cross context logic)
+4)Spring Transaction ( For Transaction support)
+5)Spring ORM - (Object Relational mapping)
+6) Spring Web MVC( web Mvc)
+
+
+----------------------------------------------------
+
+Core container
+
+
+1)Beans, core, context, SpEl
+
+
+The core and beans modules provide the most fundamental parts of the framework and provides
+ The IOC and DI features.
+
+Context - module is build on the solid base provided by the core and beans modules.
+It provides a  way to access objects in framework- style manner. It is a medium to access 
+any object defined and configured
+
+SpEl- Expression Language - this modules provides a poweful expression language for querying and manupulating objects at run time.
+
+---------------------------------------------------------------------------------
+
+Spring IOC - Inversion of Control - DI(Dependency Injection) is implemented in the Spring by Inversion of Control(container)
+
+ 1)Creating Objects - Control over the objects construction is given to the Spring container.
+ 
+The Spring IOC container by using java pojo classes and configuration metadata producces afully configured and executable System or application.
+
+
+Two types -
+BeanFactory, ApplicationContext.
+
+Spring 
+---------------------------------
+
+1) Add depencencies in pom.xml
+2)Create the class  - src/main/java(source file), Hobby and Student(Hobby)
+	List of Hobbies injected into Student Object
+3)src/main/resource - beans.xml 
+4)Main - we craeted object of ApplicationContext (Spring IOC container)
+
+DI
+	1)Constructor Injection
+	2)Property Injection
+
+
+Bean - Init and destroy
+
+When a bean is instantiated, it may require to perform some initialization to get into a usable
+state. 
+
+Init ----- destroy
+
+no more XML
+
+java Based Annotation and Configurations
+
+@Bean and @Autowire @Component @ComponentScan-
+
+----------------------------------------------------------------------------------------
+
+
+Spring MVC -
+
+An introduction to Spring MVC
+Models in Spring MVC
+Controllers in Spring MVC
+Handling data in Views
+
+
+Spring MVC , Front Controller Design Pattern
+
+
+MVC is design pattern which provides a solution to layer an application by seperating Business(Model), Presentation (View) and Control Flow(Controller).
+
+The model contains the businees logic
+The controller is responsible for the redirection and interaction between view component and model
+The view component contains the presentation part of the application.
+
+This design pattern helps us to develop loosely coupled application by segregating various concerns into different layers.
+
+
+view takes the model as the input render to the approprate end user.
+
+The controller is responsible for handling the request and generating the model and selecting the appropriate view for the request.
+
+
+Front controller design pattern
+------------------------------------------
+
+This design pattern enforces a single point of entry for all the incoming request.
+
+All the requests are handled by single piece of code which can further delegate the responsibility of processing the request to further application objects.
+
+
+1) Servlet - DispatcherServlet - configure this 
+
+
+1) Spring MVC module is based on front controller design pattern followed by MVC design pattern.
+
+2)All the incoming request are handled by single servlet named DispatcherServlet which acts as front controller in Spring MVC module.
+
+3)The DispatcherServlet then refers to the HandlerMapping to find a controller object which can handle the request.
+
+
+4) DispatcherServlet then dispatches the request to the controller object so that it can actullay perform the business logic to fulfil the user request(Controller may delegate the responsibility to further application object known as service objects).
+
+5)The controller return the encapsulated object containing the model object and the view object(or a logical name of the view).
+
+6)In Spring MVC, this encapsulated object is represented by Class ModelAndView.
+
+7)In Case of ModelAndView contains the logical name of the view, the DispatcherServlet refers to ViewResolver to find the actual view Object(path) based on the logical name.
+
+8)DispatcherServlet then passes the model object to the view Object which is then rendered to the end user.
+
+
+-----------------------------------------------------------
+
+1) webApp - maven webapp
+2)Add Spring MVC dependency on POM.xml
+3)Configure DispatcherServlet - Servlet - web.xml (deployment discriptor file)
+4)HandlerMapper - springdispatcher-servlet.xml
+	component-scan
+	Declare bean InterResourceViewResoler @Bean - /WEB-INF/views/xxxx.jsp
+5)Create package - create a Controller class
+	@Controller - is a Sprcialization of Springs @Component stereotype annotation, this class 	will be automatically detected by Spring container as part of conatiners scanning process.
+	Also @Controller is specialized for HTTP communication.
+
+	This controllers have flexible method signature and do not have to extend any base class 	or need not implement any interfaces.
+
+       @RequestMapping - the method of the @requestmapping indicates The HTTP method type.
+	Annotation is used to map request to controller method.It has various attributes to match the url.
+	RequestMapping - GET,POST,DELETE,PUT etc...
+	Spring 4.3 introduced method level variants, also known as composed annotations
+	@Getmapping , @PostMapping wrapper over @requestMapping(method=get)
+
+	ModelMap is a class, which gives us ability to pass a collection of data or values to render a view.
+
+6) index.jsp - WEB-INF/Views - index.jsp
+
+used SpEl language to show the user name.
+
+7) ViewResolver provides mapping between view name and actual views.
+  XMLViewresolver , ResourceBundleViewResolver .
+ 
+  Thmyeleaf , freemarker, veocity ect...
+
+We are uisng jsp as Spring framework has a built in integration for Spring MVC with jstl and Jsp.
+
+----------------------------------------------------------------------------------------------
+
+Steps to configure Tomcat
+
+
+https://docs.google.com/document/d/1IGexsf0T-lDGZN-lsyhu7fImYmZ63i-KoffpPgsrOzc/edit?usp=sharing
+
+
+
+-----------------------------------------------------------------------------------------------
+
+Spring MVC Crud operation:
+JSTL tags
+JSP tags - scritping tags
+
+<%= for loop>
+<% employee.get(o)%>
+
+url - http:localhost:8080:projectname:deleteEmployee?empId=101
+
+
+Update button in index.jsp
+
+once u click - it will call controller
+
+  create a new 
+
+form action = updatedata
+ empid - 101
+empname - 
+empemail - 
+empcontactNo - 
+submit
+
+-----------------------------------------------------------------------
+
+
+ Spring ORM
+ ORM
+ Hibernate as ORM
+ Data Access using Hibernate
+ Spring WebMvc - Hibernate (ORM) - Mysql
+ Spring web mvc - JDBCTemplate - Mysql
+
+ JDBC - 
+
+
+   Mysql - 
+	1)Create database - query
+	2)Create table - 
+
+
+  1) Load the driver class - com.jdbc.mysql.Driver - type -IV
+  2)get The connection - DriverManager - url - jdbc:mysql:localhost:3306
+  3)Specify the SQL statement - Statement , preparedStatement, CallableStatment
+  4)Declare parameters and provide the parameters value
+  5)prepare and execute the statemnet.
+  6)Set up the loop to itearte through the resultSet.
+  7)process any exception - SQLException
+  8)Handle the transaction - commit , rollback, savepoint
+  9)close the connection, statemnet, resultset.
+
+
+Bottleneck
+
+Low - level operation will be taken care by Spring ORM
+
+ORM - Object relational Mapping refers to the technique of mapping data between an object model representation to a relational data model representation
+
+ORM tool simplifies the data creation, data manipulation and data access.
+
+ORM internally uses the JDBC API to interact with the database.
+
+ Do not write query
+
+
+Hibernate API
+
+
+Hibernate is a Java Framework that simplefies the development of java application to interact with database. It is an open source , lightweight, ORM tool.
+hibernate implements the specification of JPA(JAVA persistence API) for data persistency.
+
+
+Some advantages
+	1)database independent query - HQL(Hibernate Query Langauge) is it the object oriented version of SQL. 
+
+	2) Automatic table creation : hibernate frameworks provides facility to create the database automatically.
+
+	3)Simplfies the complex join.
+
+	4)mapping of classes - Student has hobby
+
+
+  Hibernate mapping - XMl mapping
+
+	5)SessionFactory object - for one appication u need only one sessionFactory object (one databases).
+
+	6) Session Object- A session is used to get a physical connection with a databses.
+ 	each time you interact with database u need session object
+	
+	Configuration - SessionFactory - Session - CRUD
+	7)Transaction Object - A transaction represents a unit of work with the database and most of the RDBMS supports transaction Functionality.
+		JTA
+
+
+	----------------------------------------------------------------
+	
+	
+	1) NO xml in the code
+	1)this is maven archetype - webapp
+	2)Add dependency in pom.xml file - 
+	3)no xml - Configuration 
+	4)com.stackroute.springmvc.configuration
+		1)DispatcherServlet (WebAppInitializer)
+		2)InternalResourceviewresolver - AppConfig (ApplicationConfiguration - 
+					all the beans)
+			
+		3)properties of mysql
+		4)configuration hibernate (sessionFactory , Transaction)
+
+
+-----------------------------------------------------------------------------------
+
+     5) Entity - Employee - This class will get store in db
+     6)Dao class - repository
+     7)Create controller
+     8)Index.jsp
+
+
+
+     6)Dao getSessionFactory
+		getSessiinObject
+		getTransactionObject
+		openTranscation
+		save , update , delete
+		close the transaction
+
+	
+
+
+  hibernate Configuration - Appconfig - Hibernate
+	Spring configurations - Webconfig - InternalViewresolevr
+
+
+
+Spring application ---------ORM(Hibernate)-------------------- Mysql
+							(SQL query)
+(no sql query)                 SQL query (JDBC)
+
+
+	insert into table values (empid , empname) -----
+	Employee - int id, String name
+
+		Table - Employee (id , name)
+
+	Table - Employee - ID, name
+				101 , john
+				102 , Jenny
+
+
+
+-----------------------------------------------------------------------------
+
+Webservices
+RESTapis
+Spring Boot
+
+
+first possibility - make my trip they have access to database of airlines
+
+2nd possibility - all the airlines are dumping there database to makemy trip in every half hr.
+
+3rd posibility - exposed their services through an apis , vendors are communicating those services 
+
+
+ Web services - services avialbale over the web.
+		enables platform independent communication between applications over the web
+		provides a standard protocol or format for communication.
+
+
+  2 ways to implement them
+	
+	SOAP - Simple Object Access protocal
+	Medium - Http (POST)
+	Format - XML
+
+	REST - Representational state transfer
+	Medium - HTTP (POST,PUT,DELETE,GET)
+	Format - JSON or text
+
+
+	Resource , URI ,HTTPverbs (metadata - (request,response,Httpstatus) - it is also about resource representation.
+
+	Richardson Maturity Model - RMM 
+
+
+	Level0,1,2,3
+
+
+	Level 2 
+
+
+
+	Action		Httpverbs	URI
+
+	Check		GET		api/v1/bankingservice/account
+
+	Open		POST		api/v1/bankingservice/account/{id}
+
+	Close		DELETE		api/v1/bankingservice/account/{id}
+
+	Withdrwa	PUT		api/v1/bankingservice/account/{id}
+
+
+	Level 3 - hateos
+
+Api in our Spring Boot - 
+
+
+
+	It is very easy to develop Spring Based applications with Java
+	It reduce lots of development time and increase the productivity
+	It avoids lots of boilerplate code (AppConfig) , annotations, xml as well
+	No XML 
+	It is very easy to integrate with Spring ecosystem - Spring JDBC, ORM, DATA ect
+	It provide embedded HTTP server tomcat , jetty 
+	It provides lots of plugins to work with embedded and in memory database.
+	Spring follow the conventions over configuration
+
+
+
+CRudRepository - CRUD
+Relational Database - JpaRepository - ORM(hibernate) - JBDC - Mysql 
+ MongodB             MongoRepository - Nosql (Mongodb)
+Graph database Ne04J - Neo4jRepsoitory
+
+@RestController Spring 4- - the response is not going to be any view page but a json data.
+
+@Controller + @RequestBody
+
+
+Spring boot demo
+
+
+Hibernate mapping  - onetoone and onetomany
+
+two 	Entity - Employee Address
+
+	Repository - Employee and address
+	Service interface - Employee and addres
+	Service implementation - Employee and address
+	Controller - restController - save , getAll
+
+	postman  - save emp object, getAllemployee object
+	postman - save add object , getAllAddress object
+
+
+	One Employee can have one address. OneToOne
+	
+	Employee			Address
+	id , name , email , address_id		id (PK)
+
+
+	{
+	"id":"103",
+	"name":"emp1",
+	"email":"email1",
+	"address":{
+		"id":"1",
+		"city":"bangalore",
+		"state":"Karnataka"
+	}
+	
+}
+
+	One Employee can have many address.  @OnetoMany 
+
+
+{
+	"empid":"105",
+	"empname":"emp1",
+	"empemail":"email1",
+	"addressList":[{
+		"id":"1",
+		"city":"bangalore",
+		"state":"Karnataka"
+	},
+	{
+		"id":"2",
+		"city":"Pune",
+		"state":"Maharastra"
+	}
+	
+	]
+	
+}
+
+
+
+	+----+-----------+------------+
+| id | city      | state      |
++----+-----------+------------+
+|  1 | bangalore | Karnataka  |
+|  2 | Pune      | Maharastra |
++----+-----------+------------+
+2 rows in set (0.01 sec)
+
+mysql> select * from employee;
++-------+----------+---------+
+| empid | empemail | empname |
++-------+----------+---------+
+|   104 | email1   | emp1    |
+|   105 | email1   | emp1    |
++-------+----------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from addressList;
+select * from addressList;
+^C
+mysql> select * from employee_address_list;
++----------------+-----------------+
+| employee_empid | address_list_id |
++----------------+-----------------+
+|            105 |               1 |
+|            105 |               2 |
+
+
+
+Entity(Employee) - addressList
+
+employee_id , address_list_id
+
+
+ Employee  - Address will get deleted
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+   		
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+

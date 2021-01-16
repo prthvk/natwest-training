@@ -1,0 +1,37 @@
+image: openjdk:10-jre
+
+stages:
+  - test
+  - build
+services:
+  - 'mongo:latest'
+variables:
+   MONGO_DATABASENAME: muzixdb
+   MONGO_URI: mongodb://mongo/muzixdb
+   MONGO_HOST: mongo
+cache:
+  paths:
+   - .m2/repository
+   - target
+maven-test:
+  image: maven:3-jdk-10
+  stage: test
+  tags:
+   - gitlab-runner-01
+  script: "mvn test"
+maven-build:
+  image: maven:3-jdk-10
+  stage: build
+  tags:
+   - gitlab-runner-01
+  script: "mvn package"
+  artifacts:
+    paths:
+      - target/*.jar
+
+
+
+
+
+
+

@@ -1,0 +1,440 @@
+Spring framework (5.2)
+	1)Spring Core
+
+		a)IOC
+		b)DI
+		c)Xml configurations
+		d)Java Configurations and Annotation
+
+	2)SpringMVC
+		a) J2EE (servlet and jsp) traditional MVC
+		b)SpringMVC
+			a)Controller, services , repositories
+		c)Hibernate ORM
+	3)RESTApi
+
+		a)Webservices
+		a)RestController
+		b)Postman
+
+	4)Spring AOP(Aspect oriented programming)
+	6)Spring Boot
+		a) Controller, services, Repositories
+		b)Spring Data Jpa (ORM - Hibernate)
+			a)Mysql
+			b)Mongodb
+		c)Mockito test 
+	7)Microservices
+	8)Microservices Patterns
+		a)Zuul 
+		b)eureka
+		c)Config
+
+	9)CI and CD - Dokcerhub
+
+Entire keepNote will be done
+	
+-------------------------------------------------------------------------------------
+
+
+
+	Spring Framework
+
+Enterprise applications(Highly complex systems)
+
+What are J2EE applications?
+	They are basically large multi user applications that can manipulate massive data,network 
+	distributed resources, and complex logic.
+
+Components J2EE
+
+-Application clients and applets are client components
+-Java Servlet and java server Pages(JSP) technology components are web components
+-Enterprise Java Beans (EJB) components are bussiness components.
+
+Client tiers , middle tier, data tier(often called the enterprise information systems tier)
+
+	Client tier-
+	
+	- Application clients
+	- request to the server
+	- Clients can be a web browser, a standalone application, other services
+
+	Web tier-
+	 - Servlets , Jsp, Jstl
+
+
+ Client - Server - (Application server ,Web Server (tomcat) - Glassfish
+		(Web + Bussiness (EJB))
+
+
+
+Drawbacks
+	- Complexities - Writing code was very complex, it was tighly coupled.
+	- Lots of XML files needs to be written, for even basic ejb lots of XML files
+		(deployment descriptor)
+	-It took ages to deploy or redeploy the application.
+	-Hard coded dependency version compatibility
+	-Lots of configuration
+---------------------------------------------------------------------------------------
+
+
+What is Framework?
+
+1)Framework are large bodies(usually many classes) of predefined code to which we can add our own code to solve a problem in a specific domain.
+
+
+Benefits-
+1)Framework are based on architectures and designs and they force you to follow a specific architecture.
+
+2)They force you to follow an already optimized and less issues prone design for your applications.
+
+3)so the classes or the apis which will be provided by framework is going to be efficient , secure
+less expense, 
+
+
+--------------------------------------------------------------------------------------
+
+
+Why Spring Framework?
+
+1) Spring is framework of framework.
+
+2)The crux of the framework is a concept called DI or Inversion of Control(IOC).
+
+3)Enables the developers to develop the enterprise applications using POJOs(Plain old Java Object).
+  enterprise container(application congtainer) we are uisng web server(tomcat).
+
+4)Spring Framework is both complete and modular, because spring has a layered archotecture.
+
+5)Well designed web MVC framework 
+6)Spring is light weight
+
+7)End to End development - 
+
+
+-------------------------------------------------
+
+Spring Modules
+
+1) Spring core - (Base module)
+2) Spring JDBC - (Persistence logic)
+3)Spring AOP - (for cross context logic)
+4)Spring Transaction ( For Transaction support)
+5)Spring ORM - (Object Relational mapping)
+6) Spring Web MVC( web Mvc)
+
+
+----------------------------------------------------
+
+Core container
+
+
+1)Beans, core, context, SpEl
+
+
+The core and beans modules provide the most fundamental parts of the framework and provides
+ The IOC and DI features.
+
+Context - module is build on the solid base provided by the core and beans modules.
+It provides a  way to access objects in framework- style manner. It is a medium to access 
+any object defined and configured
+
+SpEl- Expression Language - this modules provides a poweful expression language for querying and manupulating objects at run time.
+
+---------------------------------------------------------------------------------
+
+Spring IOC - Inversion of Control - DI(Dependency Injection) is implemented in the Spring by Inversion of Control(container)
+
+ 1)Creating Objects - Control over the objects construction is given to the Spring container.
+ 
+The Spring IOC container by using java pojo classes and configuration metadata producces afully configured and executable System or application.
+
+
+Two types -
+BeanFactory, ApplicationContext.
+
+Spring 
+---------------------------------
+
+1) Add depencencies in pom.xml
+2)Create the class  - src/main/java(source file), Hobby and Student(Hobby)
+	List of Hobbies injected into Student Object
+3)src/main/resource - beans.xml 
+4)Main - we craeted object of ApplicationContext (Spring IOC container)
+
+DI
+	1)Constructor Injection
+	2)Property Injection
+
+
+Bean - Init and destroy
+
+When a bean is instantiated, it may require to perform some initialization to get into a usable
+state. 
+
+Init ----- destroy
+
+no more XML
+
+java Based Annotation and Configurations
+
+@Bean and @Autowire @Component @ComponentScan-
+
+----------------------------------------------------------------------------------------
+
+
+Spring MVC -
+
+An introduction to Spring MVC
+Models in Spring MVC
+Controllers in Spring MVC
+Handling data in Views
+
+
+Spring MVC , Front Controller Design Pattern
+
+
+MVC is design pattern which provides a solution to layer an application by seperating Business(Model), Presentation (View) and Control Flow(Controller).
+
+The model contains the businees logic
+The controller is responsible for the redirection and interaction between view component and model
+The view component contains the presentation part of the application.
+
+This design pattern helps us to develop loosely coupled application by segregating various concerns into different layers.
+
+
+view takes the model as the input render to the approprate end user.
+
+The controller is responsible for handling the request and generating the model and selecting the appropriate view for the request.
+
+
+Front controller design pattern
+------------------------------------------
+
+This design pattern enforces a single point of entry for all the incoming request.
+
+All the requests are handled by single piece of code which can further delegate the responsibility of processing the request to further application objects.
+
+
+1) Servlet - DispatcherServlet - configure this 
+
+
+1) Spring MVC module is based on front controller design pattern followed by MVC design pattern.
+
+2)All the incoming request are handled by single servlet named DispatcherServlet which acts as front controller in Spring MVC module.
+
+3)The DispatcherServlet then refers to the HandlerMapping to find a controller object which can handle the request.
+
+
+4) DispatcherServlet then dispatches the request to the controller object so that it can actullay perform the business logic to fulfil the user request(Controller may delegate the responsibility to further application object known as service objects).
+
+5)The controller return the encapsulated object containing the model object and the view object(or a logical name of the view).
+
+6)In Spring MVC, this encapsulated object is represented by Class ModelAndView.
+
+7)In Case of ModelAndView contains the logical name of the view, the DispatcherServlet refers to ViewResolver to find the actual view Object(path) based on the logical name.
+
+8)DispatcherServlet then passes the model object to the view Object which is then rendered to the end user.
+
+
+-----------------------------------------------------------
+
+1) webApp - maven webapp
+2)Add Spring MVC dependency on POM.xml
+3)Configure DispatcherServlet - Servlet - web.xml (deployment discriptor file)
+4)HandlerMapper - springdispatcher-servlet.xml
+	component-scan
+	Declare bean InterResourceViewResoler @Bean - /WEB-INF/views/xxxx.jsp
+5)Create package - create a Controller class
+	@Controller - is a Sprcialization of Springs @Component stereotype annotation, this class 	will be automatically detected by Spring container as part of conatiners scanning process.
+	Also @Controller is specialized for HTTP communication.
+
+	This controllers have flexible method signature and do not have to extend any base class 	or need not implement any interfaces.
+
+       @RequestMapping - the method of the @requestmapping indicates The HTTP method type.
+	Annotation is used to map request to controller method.It has various attributes to match the url.
+	RequestMapping - GET,POST,DELETE,PUT etc...
+	Spring 4.3 introduced method level variants, also known as composed annotations
+	@Getmapping , @PostMapping wrapper over @requestMapping(method=get)
+
+	ModelMap is a class, which gives us ability to pass a collection of data or values to render a view.
+
+6) index.jsp - WEB-INF/Views - index.jsp
+
+used SpEl language to show the user name.
+
+7) ViewResolver provides mapping between view name and actual views.
+  XMLViewresolver , ResourceBundleViewResolver .
+ 
+  Thmyeleaf , freemarker, veocity ect...
+
+We are uisng jsp as Spring framework has a built in integration for Spring MVC with jstl and Jsp.
+
+----------------------------------------------------------------------------------------------
+
+Steps to configure Tomcat
+
+
+https://docs.google.com/document/d/1IGexsf0T-lDGZN-lsyhu7fImYmZ63i-KoffpPgsrOzc/edit?usp=sharing
+
+
+
+-----------------------------------------------------------------------------------------------
+
+Spring MVC Crud operation:
+JSTL tags
+JSP tags - scritping tags
+
+<%= for loop>
+<% employee.get(o)%>
+
+url - http:localhost:8080:projectname:deleteEmployee?empId=101
+
+
+Update button in index.jsp
+
+once u click - it will call controller
+
+  create a new 
+
+form action = updatedata
+ empid - 101
+empname - 
+empemail - 
+empcontactNo - 
+submit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
